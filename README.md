@@ -32,12 +32,12 @@ data = pd.read_csv('NVIDIA_Stock_Price.csv')
 data['Datetime'] = pd.to_datetime(data['Datetime'])  # Adjust format as per your data
 data.set_index('Datetime', inplace=True)
 
-# Plot the Power Consumption to inspect for trends
+# Plot the NVIDIA_Stock_Price to inspect for trends
 plt.figure(figsize=(10, 5))
 plt.plot(data['Temperature'], label='NVIDIA_Stock_Price')
 plt.title('Time Series of Power Consumption')
 plt.xlabel('Date')
-plt.ylabel('Power Consumption')
+plt.ylabel('NVIDIA_Stock_Price')
 plt.legend()
 plt.show()
 
@@ -54,19 +54,19 @@ print('Differenced p-value:', result_diff[1])
 
 # Plot ACF and PACF for differenced data
 plot_acf(data['NVIDIA_Stock_Price_diff'].dropna())
-plt.title('ACF of Differenced Power Consumption')
+plt.title('ACF of Differenced NVIDIA_Stock_Price')
 plt.show()
 
 plot_pacf(data['NVIDIA_Stock_Price_diff'].dropna())
-plt.title('PACF of Differenced Power Consumption')
+plt.title('PACF of Differenced NVIDIA_Stock_Price')
 plt.show()
 
 # Plot Differenced Representation
 plt.figure(figsize=(10, 5))
-plt.plot(data['NVIDIA_Stock_Price_diff'], label='Differenced Power Consumption', color='red')
-plt.title('Differenced Representation of Power Consumption')
+plt.plot(data['NVIDIA_Stock_Price_diff'], label='Differenced NVIDIA_Stock_Price', color='red')
+plt.title('Differenced Representation of NVIDIA_Stock_Price')
 plt.xlabel('Date')
-plt.ylabel('Differenced Power Consumption')
+plt.ylabel('Differenced NVIDIA_Stock_Price')
 plt.axhline(0, color='black', lw=1, linestyle='--')
 plt.legend()
 plt.show()
@@ -88,11 +88,11 @@ forecast_index = pd.date_range(start=data.index[-1] + pd.Timedelta(days=1), peri
 
 # Plot actual vs forecasted values
 plt.figure(figsize=(12, 6))
-plt.plot(data['NVIDIA_Stock_Price'], label='Actual Power Consumption')
+plt.plot(data['NVIDIA_Stock_Price'], label='Actual NVIDIA_Stock_Price')
 plt.plot(forecast_index, forecast, label='Forecast', color='orange')
 plt.xlabel('Date')
-plt.ylabel('Power Consumption')
-plt.title('ARIMA Forecast of Power Consumption')
+plt.ylabel('NVIDIA_Stock_Price')
+plt.title('ARIMA Forecast of NVIDIA_Stock_Price')
 plt.legend()
 plt.show()
 
