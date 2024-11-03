@@ -1,6 +1,7 @@
 # EX.NO.09        A project on Time series analysis on weather forecasting using ARIMA model 
 ### Date: 
-
+### Name: Lubindher S
+### Reg No: 212222240056
 ### AIM:
 To Create a project on Time series analysis on weather forecasting using ARIMA model in  Python and compare with other models.
 ### ALGORITHM:
